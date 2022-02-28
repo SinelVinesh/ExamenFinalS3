@@ -1,0 +1,18 @@
+[Base de donnees]
+[x] Conception de base                  15 min
+[x] Creation des tables et sequences    5-10 min
+[ ] Insertion des donnees test          30 min
+
+[Back]
+[ ] Creer Model                         30 min
+[ ] Formulaire nouvelle categorie avec son budget 15 min
+[ ] Formulaire salaire mensuel          15 min
+[ ] Afficher tous les utilisateur et gerer 15 min
+[ ] Afficher tous les beneficiaires et gerer 15 min
+[ ] Gestion de connexion utilisateur    15 min
+[ ] Gestion de commexion admin          15 min
+[ ] Formulaire d'ajout de depense       15 min
+[ ] Formulaire de saisie d'entree imprevue 15 min
+[ ] Recapitulation mensuelle            15 min
+[ ] Page d'affichage pour voie le tableau mensuel de depense par benef 15 min
+[ ] Graphique pour montrer l'evolution par mois d'une categorie 30 min
