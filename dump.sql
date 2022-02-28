@@ -153,6 +153,33 @@ CREATE TABLE public.depenses (
 ALTER TABLE public.depenses OWNER TO exams3_user;
 
 --
+-- Name: entree_imprevu_s; Type: SEQUENCE; Schema: public; Owner: exams3_user
+--
+
+CREATE SEQUENCE public.entree_imprevu_s
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.entree_imprevu_s OWNER TO exams3_user;
+
+--
+-- Name: entree_imprevu; Type: TABLE; Schema: public; Owner: exams3_user
+--
+
+CREATE TABLE public.entree_imprevu (
+    id_in_imprevu character varying(7) DEFAULT concat('IMP', lpad((nextval('public.entree_imprevu_s'::regclass))::text, 4, '0'::text)) NOT NULL,
+    date_in_imprevu date NOT NULL,
+    montant_in_imprevu real NOT NULL
+);
+
+
+ALTER TABLE public.entree_imprevu OWNER TO exams3_user;
+
+--
 -- Name: salaire_s; Type: SEQUENCE; Schema: public; Owner: exams3_user
 --
 
@@ -216,7 +243,8 @@ CREATE TABLE public.utilisateur (
     id_utilisateur character varying(7) DEFAULT concat('USR', lpad((nextval('public.utilisateur_s'::regclass))::text, 4, '0'::text)) NOT NULL,
     nom_utilisateur character varying(50) NOT NULL,
     login_utilisateur character varying(255) NOT NULL,
-    password_utilisateur character varying(255) NOT NULL
+    password_utilisateur character varying(255) NOT NULL,
+    admin boolean DEFAULT false
 );
 
 
@@ -255,6 +283,14 @@ COPY public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id
 
 
 --
+-- Data for Name: entree_imprevu; Type: TABLE DATA; Schema: public; Owner: exams3_user
+--
+
+COPY public.entree_imprevu (id_in_imprevu, date_in_imprevu, montant_in_imprevu) FROM stdin;
+\.
+
+
+--
 -- Data for Name: salaire; Type: TABLE DATA; Schema: public; Owner: exams3_user
 --
 
@@ -266,7 +302,7 @@ COPY public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) 
 -- Data for Name: utilisateur; Type: TABLE DATA; Schema: public; Owner: exams3_user
 --
 
-COPY public.utilisateur (id_utilisateur, nom_utilisateur, login_utilisateur, password_utilisateur) FROM stdin;
+COPY public.utilisateur (id_utilisateur, nom_utilisateur, login_utilisateur, password_utilisateur, admin) FROM stdin;
 \.
 
 
@@ -296,6 +332,13 @@ SELECT pg_catalog.setval('public.categorie_s', 1, false);
 --
 
 SELECT pg_catalog.setval('public.depenses_s', 1, false);
+
+
+--
+-- Name: entree_imprevu_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
+--
+
+SELECT pg_catalog.setval('public.entree_imprevu_s', 1, false);
 
 
 --
@@ -349,6 +392,14 @@ ALTER TABLE ONLY public.categorie
 
 ALTER TABLE ONLY public.depenses
     ADD CONSTRAINT depenses_pkey PRIMARY KEY (id_depenses);
+
+
+--
+-- Name: entree_imprevu entree_imprevu_pkey; Type: CONSTRAINT; Schema: public; Owner: exams3_user
+--
+
+ALTER TABLE ONLY public.entree_imprevu
+    ADD CONSTRAINT entree_imprevu_pkey PRIMARY KEY (id_in_imprevu);
 
 
 --
