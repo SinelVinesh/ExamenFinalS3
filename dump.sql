@@ -255,6 +255,16 @@ ALTER TABLE public.utilisateur OWNER TO exams3_user;
 --
 
 COPY public.benef (id_benef, nom_benef) FROM stdin;
+BEN0001	Famille
+BEN0002	Papa
+BEN0003	Maman
+BEN0004	Enfant
+BEN0005	Koto
+BEN0006	Famille
+BEN0007	Papa
+BEN0008	Maman
+BEN0009	Enfant
+BEN0010	Koto
 \.
 
 
@@ -263,6 +273,26 @@ COPY public.benef (id_benef, nom_benef) FROM stdin;
 --
 
 COPY public.budget (id_budget, date_budget, montant_budget, id_categorie) FROM stdin;
+BUD0001	2022-01-30	200000	CAT0001
+BUD0002	2022-01-30	400000	CAT0002
+BUD0003	2022-01-30	500000	CAT0003
+BUD0004	2022-01-30	100000	CAT0004
+BUD0005	2022-01-30	500000	CAT0005
+BUD0006	2022-02-28	200000	CAT0001
+BUD0007	2022-02-28	400000	CAT0002
+BUD0008	2022-02-28	500000	CAT0003
+BUD0009	2022-02-28	100000	CAT0004
+BUD0010	2022-02-28	500000	CAT0005
+BUD0011	2022-01-30	200000	CAT0001
+BUD0012	2022-01-30	400000	CAT0002
+BUD0013	2022-01-30	500000	CAT0003
+BUD0014	2022-01-30	100000	CAT0004
+BUD0015	2022-01-30	500000	CAT0005
+BUD0016	2022-02-28	200000	CAT0001
+BUD0017	2022-02-28	400000	CAT0002
+BUD0018	2022-02-28	500000	CAT0003
+BUD0019	2022-02-28	100000	CAT0004
+BUD0020	2022-02-28	500000	CAT0005
 \.
 
 
@@ -271,6 +301,16 @@ COPY public.budget (id_budget, date_budget, montant_budget, id_categorie) FROM s
 --
 
 COPY public.categorie (id_categorie, type_categorie) FROM stdin;
+CAT0001	nourriture
+CAT0002	deplacement
+CAT0003	loyer
+CAT0004	divertissement
+CAT0005	education
+CAT0006	nourriture
+CAT0007	deplacement
+CAT0008	loyer
+CAT0009	divertissement
+CAT0010	education
 \.
 
 
@@ -279,6 +319,20 @@ COPY public.categorie (id_categorie, type_categorie) FROM stdin;
 --
 
 COPY public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) FROM stdin;
+DEP0001	2022-01-01	BEN0001	50000	CAT0001
+DEP0002	2022-01-15	BEN0001	150000	CAT0001
+DEP0003	2022-01-26	BEN0002	100000	CAT0002
+DEP0004	2022-01-29	BEN0002	100000	CAT0002
+DEP0005	2022-01-01	BEN0001	500000	CAT0003
+DEP0006	2022-01-11	BEN0005	50000	CAT0004
+DEP0007	2022-01-01	BEN0004	500000	CAT0005
+DEP0008	2022-02-01	BEN0001	50000	CAT0001
+DEP0009	2022-02-15	BEN0001	150000	CAT0001
+DEP0010	2022-02-26	BEN0002	100000	CAT0002
+DEP0011	2022-02-28	BEN0002	100000	CAT0002
+DEP0012	2022-02-01	BEN0001	500000	CAT0003
+DEP0013	2022-02-11	BEN0005	50000	CAT0004
+DEP0014	2022-02-01	BEN0004	500000	CAT0005
 \.
 
 
@@ -287,6 +341,8 @@ COPY public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id
 --
 
 COPY public.entree_imprevu (id_in_imprevu, date_in_imprevu, montant_in_imprevu) FROM stdin;
+IMP0001	2022-01-16	200000
+IMP0002	2022-02-19	100000
 \.
 
 
@@ -295,6 +351,30 @@ COPY public.entree_imprevu (id_in_imprevu, date_in_imprevu, montant_in_imprevu) 
 --
 
 COPY public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) FROM stdin;
+SAL0001	2021-09-30	USR0001	4e+06
+SAL0002	2021-09-30	USR0002	200000
+SAL0003	2021-10-30	USR0001	4e+06
+SAL0004	2021-10-30	USR0002	200000
+SAL0005	2021-11-30	USR0001	4e+06
+SAL0006	2021-11-30	USR0002	200000
+SAL0007	2021-12-30	USR0001	4e+06
+SAL0008	2021-12-30	USR0002	200000
+SAL0009	2022-01-30	USR0001	4.5e+06
+SAL0010	2022-01-30	USR0002	100000
+SAL0011	2022-02-28	USR0001	4.5e+06
+SAL0012	2022-02-28	USR0002	100000
+SAL0013	2021-09-30	USR0001	4e+06
+SAL0014	2021-09-30	USR0002	200000
+SAL0015	2021-10-30	USR0001	4e+06
+SAL0016	2021-10-30	USR0002	200000
+SAL0017	2021-11-30	USR0001	4e+06
+SAL0018	2021-11-30	USR0002	200000
+SAL0019	2021-12-30	USR0001	4e+06
+SAL0020	2021-12-30	USR0002	200000
+SAL0021	2022-01-30	USR0001	4.5e+06
+SAL0022	2022-01-30	USR0002	100000
+SAL0023	2022-02-28	USR0001	4.5e+06
+SAL0024	2022-02-28	USR0002	100000
 \.
 
 
@@ -303,6 +383,30 @@ COPY public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) 
 --
 
 COPY public.utilisateur (id_utilisateur, nom_utilisateur, login_utilisateur, password_utilisateur, admin) FROM stdin;
+USR0001	Papa	Papa	Papa	t
+USR0002	Maman	Maman	Maman	f
+USR0003	Enfant1	Enfant1	Enfant1	f
+USR0004	Enfant2	Enfant2	Enfant2	f
+USR0005	Enfant3	Enfant3	Enfant3	f
+USR0006	Tonton	Tonton	Tonton	f
+USR0007	Papa	Papa	Papa	t
+USR0008	Maman	Maman	Maman	f
+USR0009	Enfant1	Enfant1	Enfant1	f
+USR0010	Enfant2	Enfant2	Enfant2	f
+USR0011	Enfant3	Enfant3	Enfant3	f
+USR0012	Tonton	Tonton	Tonton	f
+USR0013	Papa	Papa	Papa	t
+USR0014	Maman	Maman	Maman	f
+USR0015	Enfant1	Enfant1	Enfant1	f
+USR0016	Enfant2	Enfant2	Enfant2	f
+USR0017	Enfant3	Enfant3	Enfant3	f
+USR0018	Tonton	Tonton	Tonton	f
+USR0019	Papa	Papa	Papa	t
+USR0020	Maman	Maman	Maman	f
+USR0021	Enfant1	Enfant1	Enfant1	f
+USR0022	Enfant2	Enfant2	Enfant2	f
+USR0023	Enfant3	Enfant3	Enfant3	f
+USR0024	Tonton	Tonton	Tonton	f
 \.
 
 
@@ -310,42 +414,42 @@ COPY public.utilisateur (id_utilisateur, nom_utilisateur, login_utilisateur, pas
 -- Name: benef_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.benef_s', 1, false);
+SELECT pg_catalog.setval('public.benef_s', 10, true);
 
 
 --
 -- Name: budget_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.budget_s', 1, false);
+SELECT pg_catalog.setval('public.budget_s', 20, true);
 
 
 --
 -- Name: categorie_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.categorie_s', 1, false);
+SELECT pg_catalog.setval('public.categorie_s', 10, true);
 
 
 --
 -- Name: depenses_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.depenses_s', 1, false);
+SELECT pg_catalog.setval('public.depenses_s', 14, true);
 
 
 --
 -- Name: entree_imprevu_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.entree_imprevu_s', 1, false);
+SELECT pg_catalog.setval('public.entree_imprevu_s', 2, true);
 
 
 --
 -- Name: salaire_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.salaire_s', 1, false);
+SELECT pg_catalog.setval('public.salaire_s', 24, true);
 
 
 --
@@ -359,7 +463,7 @@ SELECT pg_catalog.setval('public.user_s', 1, false);
 -- Name: utilisateur_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.utilisateur_s', 1, false);
+SELECT pg_catalog.setval('public.utilisateur_s', 24, true);
 
 
 --
