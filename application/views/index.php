@@ -12,9 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <br>
     <a href="<?php echo site_url('connexion/user')?>">Connexion User</a>
     <br>
-    <a href="">Tableau mensuel</a>
-    <br>
-    <a href="">Tableau mensuel de depense par beneficiaire</a>
+    <a href="<?php echo site_url('resume')?>">Tableau mensuel</a>
     <br>
     <a href="">Graphique par categorie</a>
 </body>
