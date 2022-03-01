@@ -13,4 +13,11 @@ class Utilisateurs extends CI_Controller
         $this->Utilisateur->insert($data['nom'],$data['login'],$data['password']);
         $this->load->view('liste_utilisateurs');
     }
+ public function select(){
+        $this->load->model('UtilisateurModel');
+        $data = array();
+        $data['utilisateur'] = $this->UtilisateurModel->select();
+        $this->load->view('liste_utilisateurs',$data);
+
+ }
 }

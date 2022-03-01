@@ -54,7 +54,7 @@ $this->load->view('common/header.php');
                                         <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Date de la depemse</th>
+                                            <th>Date de la depense</th>
                                             <th>Type</th>
                                             <th>Montant (MGA)</th>
                                             <th>Beneficiaire</th>

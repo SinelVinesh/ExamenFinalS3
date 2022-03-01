@@ -16,29 +16,6 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-DROP DATABASE IF EXISTS exams3;
---
--- Name: exams3; Type: DATABASE; Schema: -; Owner: exams3_user
---
-
-CREATE DATABASE exams3 WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'French_Madagascar.1252';
-
-
-ALTER DATABASE exams3 OWNER TO exams3_user;
-
-\connect exams3
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
 --
 -- Name: benef_s; Type: SEQUENCE; Schema: public; Owner: exams3_user
 --

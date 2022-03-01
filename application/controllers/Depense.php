@@ -5,4 +5,5 @@ class Depense extends CI_Controller
     public function ajout() {
         $this->load->view('ajout_depense');
     }
+
 }
