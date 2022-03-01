@@ -20,4 +20,15 @@ class Utilisateurs extends CI_Controller
         $this->load->view('liste_utilisateurs',$data);
 
  }
+ public function update(){
+     $this->load->model('UtilisateurModel');
+     if($this->input->post('id_utilisateur') !== null) {
+         $data['id_utilisateur'] = $this->input->post('id_utilisateur');
+         $data['nom_utilisateur'] = $this->input->post('nom_utilisateur');
+         $data['login_utilisateur'] = $this->input->post('login_utilisateur');
+         $data['password_utilisateur'] = $this->input->post('password_utilisateur');
+         $this->UtilisateurModel->update( $data['id_utilisateur'],$data['nom_utilisateur'],$data['login_utilisateur'],$data['password_utilisateur']);
+     }
+     $this->load->view('liste_utilisateurs');
+ }
 }
