@@ -1,5 +1,8 @@
 <?php
 $this->load->view('common/header');
+$users = [['id'=>'USR0001','nom'=>'Rakoto','login'=>'RAKS','password'=>'motdepasse'],
+    ['id'=>'USR0002','nom'=>'Rasoa','login'=>'RAsss','password'=>'164852'],
+    ['id'=>'USR0003','nom'=>'Riana','login'=>'Riria','password'=>'jellybeans']];
 ?>
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
@@ -38,7 +41,17 @@ $this->load->view('common/header');
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form><label class="form-label">Nom :</label><input class="form-control" type="text"><label class="form-label">Identifiant :</label><input class="form-control" type="text"><label class="form-label">Mot de passe :</label><input class="form-control" type="text"><label class="form-label">Confirmer le mot de passe :</label><input class="form-control" type="text"><button class="btn btn-primary" type="button">Ajouter</button></form>
+                                <form action="<?php site_url('utilisateurs/insert')?>">
+                                    <label class="form-label">Nom :</label>
+                                    <input class="form-control" type="text" name="nom">
+                                    <label class="form-label">Identifiant :</label>
+                                    <input class="form-control" type="text" name="login">
+                                    <label class="form-label">Mot de passe :</label>
+                                    <input class="form-control" type="text" name="password">
+                                    <label class="form-label">Confirmer le mot de passe :</label>
+                                    <input class="form-control" type="text" name="password_confirm">
+                                    <button class="btn btn-primary" type="submit">Ajouter</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -60,40 +73,17 @@ $this->load->view('common/header');
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ($users as $user) { ?>
                                     <tr>
-                                        <td>USR0001</td>
-                                        <td><input class="form-control" type="text" value="Rakoto"></td>
-                                        <td><input class="form-control" type="text" value="RAKS01"></td>
-                                        <td><input class="form-control" type="text" value="supermdp"></td>
-                                        <td><input type="checkbox"></td>
+                                        <td><?php echo $user['id'] ?></td>
+                                        <td><input class="form-control" type="text" value="<?php echo $user['nom']?>" name="<?php echo $user['id'] ?>"></td>
+                                        <td><input class="form-control" type="text" value="<?php echo $user['login'] ?>" name="<?php echo $user['id'] ?>"></td>
+                                        <td><input class="form-control" type="text" value="<?php echo $user['password']?>" name="<?php echo $user['id'] ?>"></td>
                                     </tr>
-                                    <tr>
-                                        <td>USR0001</td>
-                                        <td><input class="form-control" type="text" value="Rakoto"></td>
-                                        <td><input class="form-control" type="text" value="RAKS01"></td>
-                                        <td><input class="form-control" type="text" value="supermdp"></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>USR0001</td>
-                                        <td><input class="form-control" type="text" value="Rakoto"></td>
-                                        <td><input class="form-control" type="text" value="RAKS01"></td>
-                                        <td><input class="form-control" type="text" value="supermdp"></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>USR0001</td>
-                                        <td><input class="form-control" type="text" value="Rakoto"></td>
-                                        <td><input class="form-control" type="text" value="RAKS01"></td>
-                                        <td><input class="form-control" type="text" value="supermdp"></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
+                                    <?php } ?>
                                     </tbody>
-                                    <tfoot>
-                                    <tr></tr>
-                                    </tfoot>
                                 </table>
-                            </div><button class="btn btn-primary" type="button">Valider les modifications</button><button class="btn btn-danger" type="button" style="margin-left: 10px;">Supprimer la selection</button>
+                            </div><button class="btn btn-primary" type="submit">Valider les modifications</button>
                         </form>
                     </div>
                 </div>

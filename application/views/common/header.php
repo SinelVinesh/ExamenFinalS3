@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a class="nav-link" href="<?php echo site_url('depense/ajout')?>"><i class="fas fa-user"></i><span>Ajouter une depense</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('entree/ajout')?>"><i class="fas fa-user"></i><span>Ajouter une entree imprevue</span></a>
+                    <a class="nav-link" href="<?php echo site_url('entree/insert')?>"><i class="fas fa-user"></i><span>Ajouter une entree imprevue</span></a>
                 </li>
                 <?php if(!isset($logged)) { ?>
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('connexion/user')?>">Se connecter en temps qu'utilisateur</a></li>

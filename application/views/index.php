@@ -108,9 +108,6 @@ $this->load->view('common/header.php');
                                         </tr>
                                         <?php } ?>
                                         </tbody>
-                                        <tfoot>
-                                        <tr></tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </form>

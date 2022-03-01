@@ -56,7 +56,7 @@ $depenses=[['id'=>'DEP0001','date'=>'2022-01-22','type'=>'Alimentation','montant
         </nav>
         <div class="container-fluid">
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                <h3 class="text-dark mb-0">Tableaux Beneficiaire</h3>
+                <h3 class="text-dark mb-0">Tableau Beneficiaire</h3>
             </div>
             <form action="<?php base_url('resume/beneficiaire') ?>" method="post"><select class="form-select tiny_field">
                     <?php foreach ($beneficiaires as $beneficiaire) {?>

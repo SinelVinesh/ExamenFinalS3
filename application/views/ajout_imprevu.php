@@ -1,28 +1,53 @@
 <?php
 $this->load->view('common/header');
+$entrees = [['id'=>'ENT0001','date'=>'2021-01-12','montant'=>24000],
+            ['id'=>'ENT0002','date'=>'2021-01-11','montant'=>25400],
+            ['id'=>'ENT0003','date'=>'2022-01-10','montant'=>150000]];
 ?>
 <div class="d-flex flex-column" id="content-wrapper">
     <div id="content">
         <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-            <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+            <div class="container-fluid">
+                <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i
+                            class="fas fa-bars"></i></button>
                 <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group"></div>
                 </form>
                 <ul class="navbar-nav flex-nowrap ms-auto">
-                    <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                        <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                    <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
+                                                                        aria-expanded="false" data-bs-toggle="dropdown"
+                                                                        href="#"><i class="fas fa-search"></i></a>
+                        <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in"
+                             aria-labelledby="searchDropdown">
                             <form class="me-auto navbar-search w-100">
-                                <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                    <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                <div class="input-group"><input class="bg-light form-control border-0 small" type="text"
+                                                                placeholder="Search for ...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </li>
                     <div class="d-none d-sm-block topbar-divider"></div>
                     <li class="nav-item dropdown no-arrow">
-                        <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
-                            <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
-                                <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                        <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                                                                   aria-expanded="false" data-bs-toggle="dropdown"
+                                                                   href="#"><span
+                                        class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img
+                                        class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
+                            <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
+                                        class="dropdown-item" href="#"><i
+                                            class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a
+                                        class="dropdown-item" href="#"><i
+                                            class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a
+                                        class="dropdown-item" href="#"><i
+                                            class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity
+                                    log</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i
+                                            class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                             </div>
                         </div>
                     </li>
@@ -38,7 +63,12 @@ $this->load->view('common/header');
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <form><label class="form-label">Date de l'entree:</label><input class="form-control" type="date"><label class="form-label">Montant de l'entree:</label><input class="form-control" type="number"><button class="btn btn-primary" type="button">Ajouter</button></form>
+                            <form action="entree/insert"><label class="form-label">Date de l'entree :</label><input class="form-control"
+                                                                                             type="date" name="date"><label
+                                        class="form-label">Montant de l'entree:</label><input class="form-control"
+                                                                                              type="number" name="montant">
+                                <button class="btn btn-primary" type="submit">Ajouter</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -48,8 +78,8 @@ $this->load->view('common/header');
                     <p class="text-primary m-0 fw-bold">Liste des dernieres entrees imprevues</p>
                 </div>
                 <div class="card-body">
-                    <form>
-                        <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                        <div class="table-responsive table mt-2" id="dataTable-1" role="grid"
+                             aria-describedby="dataTable_info">
                             <table class="table my-0" id="dataTable">
                                 <thead>
                                 <tr>
@@ -59,35 +89,14 @@ $this->load->view('common/header');
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php foreach ($entrees as $entree) { ?>
                                 <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
+                                    <td><?php echo $entree['id'] ?></td>
+                                    <td><?php echo $entree['date'] ?></td>
+                                    <td><?php echo $entree['montant'] ?></td>
                                 </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                </tr>
+                                <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                <tr></tr>
-                                </tfoot>
                             </table>
                         </div>
                     </form>

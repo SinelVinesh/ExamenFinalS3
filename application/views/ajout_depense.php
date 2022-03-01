@@ -1,5 +1,11 @@
 <?php
 $this->load->view('common/header');
+$listecat = [['id'=>'CAT0001','designation'=>'Alimentation'],['id'=>'CAT0002','designation'=>'Plaisir']
+    ,['id'=>'CAT0003','designation'=>'Soin']];
+$listebenef =[['id'=>'BEN0001','designation'=>'Jean'],['id'=>'BEN0005','designation'=>'Jeff']];
+$listedepenses =[['id'=>'DEP0001','date'=>'2021-10-21','categorie'=>'Alimentation','montant'=>64520,'beneficiaire'=>'Jean'],
+                ['id'=>'DEP0002','date'=>'2021-14-21','categorie'=>'Plaisir','montant'=>5420,'beneficiaire'=>'Koto'],
+                ['id'=>'DEP0003','date'=>'2022-01-11','categorie'=>'Sante','montant'=>42000,'beneficiaire'=>'Jeanne']]
 ?>
 <div class="d-flex flex-column" id="content-wrapper">
     <div id="content">
@@ -38,13 +44,22 @@ $this->load->view('common/header');
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <form><label class="form-label">Date de la depense :</label><input class="form-control" type="date"><label class="form-label">Montant de la depense :</label><input class="form-control" type="number"><label class="form-label">Beneficiaire de la depense :&nbsp;</label><select class="form-select">
-                                    <optgroup label="This is a group">
-                                        <option value="12" selected="">This is item 1</option>
-                                        <option value="13">This is item 2</option>
-                                        <option value="14">This is item 3</option>
-                                    </optgroup>
-                                </select><button class="btn btn-primary" type="button">Ajouter</button></form>
+                            <form action="depense/insert"><label class="form-label">Date de la depense :</label><input class="form-control" type="date" name="date">
+                                <label class="form-label">Montant de la depense :</label>
+                                <input class="form-control" type="number" name="montant">
+                                <label class="form-label">Categorie de la depense :&nbsp;</label>
+                                <select name="categorie" class="form-select">
+                                    <?php foreach ($listecat as $cat) { ?>
+                                        <option value="<?php echo $cat['id'] ?>" selected=""><?php echo $cat['designation'] ?></option>
+                                    <?php } ?>
+                                </select>
+                                <label class="form-label">Beneficiaire de la depense :</label>
+                                <select name="beneficiaire" class="form-select">
+                                    <?php foreach ($listebenef as $benef) { ?>
+                                        <option value="<?php echo $benef['id'] ?>" selected=""><?php echo $benef['designation'] ?></option>
+                                    <?php } ?>
+                                </select>
+                                <button class="btn btn-primary" type="submit">Ajouter</button></form>
                         </div>
                     </div>
                 </div>
@@ -54,55 +69,30 @@ $this->load->view('common/header');
                     <p class="text-primary m-0 fw-bold">Liste des dernieres depenses</p>
                 </div>
                 <div class="card-body">
-                    <form>
                         <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
                             <table class="table my-0" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Categorie de la depense</th>
                                     <th>Date de la depemse</th>
                                     <th>Montant (MGA)</th>
                                     <th>Beneficiaire</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php foreach ($listedepenses as $depense) { ?>
                                 <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
+                                    <td><?php echo $depense['id'] ?></td>
+                                    <td><?php echo $depense['categorie'] ?></td>
+                                    <td><?php echo $depense['montant'] ?></td>
+                                    <td><?php echo $depense['beneficiaire'] ?></td>
                                 </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
-                                </tr>
+                                <?php } ?>
+
                                 </tbody>
-                                <tfoot>
-                                <tr></tr>
-                                </tfoot>
                             </table>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
