@@ -8,5 +8,9 @@ class EntreeModel extends CI_Model
         return $query->result_array();
 
     }
+    public function insert($date_in_imprevu,$montant_in_imprevu){
+        $query =  $this->db->query("Insert into entree_imprevu(date_in_imprevu, montant_in_imprevu) values('".$date_in_imprevu."',.$montant_in_imprevu.)");
+        return $query->result_array();
+    }
 }
 ?>
