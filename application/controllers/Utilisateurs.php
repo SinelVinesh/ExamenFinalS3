@@ -5,4 +5,12 @@ class Utilisateurs extends CI_Controller
     public function index() {
         $this->load->view('liste_utilisateurs');
     }
+    public function insert(){
+        $data['nom'] = $this->input->post('nom');
+        $data['login'] = $this->input->post('login');
+        $data['password'] = $this->input->post('password');
+        $this->load->model('UtilisateurModel');
+        $this->Utilisateur->insert($data['nom'],$data['login'],$data['password']);
+        $this->load->view('liste_utilisateurs');
+    }
 }

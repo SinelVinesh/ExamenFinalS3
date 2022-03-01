@@ -12,9 +12,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <h1>Liste des utilisateurs</h1>
-<form>
+<form action="<?php echo site_url('Beneficiaires/insert') ?>" method="post">
     <label for="designation">Designation du beneficiaire : </label>
-    <input type="text">
+    <input type="text" value="nom_benef" id="nom_benef">
     <br>
     <button type="submit">Ajouter</button>
 </form>

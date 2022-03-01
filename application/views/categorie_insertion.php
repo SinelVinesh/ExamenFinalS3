@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <h1>Insertion d'une nouvelle categorie</h1>
-<form action="">
+<form action="<?php echo site_url('Categorie/insert')?>" method="post">
     <label for="categorie_name">Nom de la categorie : </label>
     <input type="text" name="categorie_name" id="categorie_name">
     <br>

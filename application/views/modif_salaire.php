@@ -13,9 +13,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <h1>Gestion des salaires de Jean</h1>
     <form action="<?php echo site_url('Salaire/modif_salaire')?>">
-        <label for="date_salaire">Date lie au salaire : </label>
-        <input type="date" name="date_salaire" id="date_salaire">
-        <br>
         <label for="montant">Montant du salaire : </label>
         <input type="number" name="montant" id="montant">
         <br>
