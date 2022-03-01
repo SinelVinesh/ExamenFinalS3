@@ -19,7 +19,7 @@ $this->load->view('common/header.php',$data);
                                     <h4 class="text-dark mb-4">Bienvenue !</h4>
                                 </div>
                                 <form class="user" action="<?php echo site_url('Connexion/connect_as_simple_user')?>" method="post">
-                                    <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Identifiant" name="email"></div>
+                                    <div class="mb-3"><input class="form-control form-control-user" type="text" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Identifiant" name="username"></div>
                                     <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Mot de passe" name="password"></div>
                                     <div class="mb-3">
                                         <div class="custom-control custom-checkbox small"></div>

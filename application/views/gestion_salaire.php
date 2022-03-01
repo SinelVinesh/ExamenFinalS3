@@ -1,5 +1,5 @@
 <?php
-$this->load->view('common/header');
+$this->load->view('common/header.php');
 ?>
 <div class="d-flex flex-column" id="content-wrapper">
     <div id="content">
@@ -30,28 +30,28 @@ $this->load->view('common/header');
             </div>
         </nav>
         <div class="container-fluid">
-            <h3 class="text-dark mb-4">Depense</h3>
+            <h3 class="text-dark mb-4">Salaires</h3>
             <div class="card shadow">
                 <div class="card-header py-3">
-                    <p class="text-primary m-0 fw-bold">Ajouter une depense</p>
+                    <p class="text-primary m-0 fw-bold">Ajouter un salaire</p>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <form><label class="form-label">Date de la depense :</label><input class="form-control" type="date"><label class="form-label">Montant de la depense :</label><input class="form-control" type="number"><label class="form-label">Beneficiaire de la depense :&nbsp;</label><select class="form-select">
+                            <form><label class="form-label">Utilisateur :</label><select class="form-select">
                                     <optgroup label="This is a group">
                                         <option value="12" selected="">This is item 1</option>
                                         <option value="13">This is item 2</option>
                                         <option value="14">This is item 3</option>
                                     </optgroup>
-                                </select><button class="btn btn-primary" type="button">Ajouter</button></form>
+                                </select><label class="form-label">Montant :</label><input class="form-control" type="text"><button class="btn btn-primary" type="button">Ajouter</button></form>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card shadow" style="margin-top: 20px;">
                 <div class="card-header py-3">
-                    <p class="text-primary m-0 fw-bold">Liste des dernieres depenses</p>
+                    <p class="text-primary m-0 fw-bold">Liste des salaries</p>
                 </div>
                 <div class="card-body">
                     <form>
@@ -60,48 +60,41 @@ $this->load->view('common/header');
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Date de la depemse</th>
-                                    <th>Montant (MGA)</th>
-                                    <th>Beneficiaire</th>
+                                    <th>Utilisateur</th>
+                                    <th>Montant</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
+                                    <td>Rakoto</td>
+                                    <td><input class="form-control" type="number"></td>
+                                    <td><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
+                                    <td>Rakoto</td>
+                                    <td><input class="form-control" type="number"></td>
+                                    <td><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
+                                    <td>Rakoto</td>
+                                    <td><input class="form-control" type="number"></td>
+                                    <td><input type="checkbox"></td>
                                 </tr>
                                 <tr>
                                     <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Alimentation</td>
-                                    <td>60000</td>
-                                    <td>Jean</td>
+                                    <td>Rakoto</td>
+                                    <td><input class="form-control" type="number"></td>
+                                    <td><input type="checkbox"></td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
                                 <tr></tr>
                                 </tfoot>
                             </table>
-                        </div>
+                        </div><button class="btn btn-primary" type="button">Valider les modifications</button><button class="btn btn-danger" type="button" style="margin-left: 10px;">Supprimer la selection</button>
                     </form>
                 </div>
             </div>
@@ -115,5 +108,5 @@ $this->load->view('common/header');
 </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
 </div>
 <?php
-$this->load->view('common/footer');
+$this->load->view('common/footer.php');
 ?>

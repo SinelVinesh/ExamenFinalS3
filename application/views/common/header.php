@@ -34,6 +34,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url('resume/categorie')?>"><i class="fas fa-user"></i><span>Evolution Categorie</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('beneficiaires')?>"><i class="fas fa-user"></i><span>Gestion des beneficiaires</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('categorie/insertion')?>"><i class="fas fa-user"></i><span>Gestion des categories</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('salaire')?>"><i class="fas fa-user"></i><span>Gestion des salaires</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('utilisateurs')?>"><i class="fas fa-user"></i><span>Gestion des utilisateurs</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('depense/ajout')?>"><i class="fas fa-user"></i><span>Ajouter une depense</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('entree/ajout')?>"><i class="fas fa-user"></i><span>Ajouter une entree imprevue</span></a>
+                </li>
                 <?php if(!isset($logged)) { ?>
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('connexion/user')?>">Se connecter en temps qu'utilisateur</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo site_url('connexion/admin')?>">Se connecter en temps qu'administrateur</a></li>
