@@ -9,5 +9,9 @@ class CategorieModel extends CI_Model
         $tmp = $query->row_array();
         $this->db->query("Insert into budget(date_budget, montant_budget, id_categorie) values(now(),$Budget,'".$tmp['id_categorie']."')");
     }
+    public function getById($id){
+        $query = $this->db->query("Select * from categorie where id_categorie = '".$id."'");
+        return $query->result_array();
+    }
 }
 ?>

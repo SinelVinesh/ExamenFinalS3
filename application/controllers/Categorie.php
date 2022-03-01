@@ -13,4 +13,13 @@ class Categorie extends CI_Controller
         $this->CategorieModel->insert($data['categorie_name'],$data['Budget']);
         $this->load->view('index.php');
     }
-}
+    public function getById(){
+        $this->load->model(CategorieModel);
+        $data = array();
+        if($this->input->post('id_categorie') !== null) {
+            $tmp['id_categorie'] = $this->input->post('id_categorie');
+            $data['ById'] = $this->CategorieModel->getById($tmp['id_categorie'] );
+        }
+        }
+    }
+?>
