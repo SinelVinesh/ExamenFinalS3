@@ -75,12 +75,12 @@ $depenses =[['id'=>'DEP0001','date'=>'2021-10-21','categorie'=>'Alimentation','m
                                 <tbody>
                                 <?php
                                 if($list != null) {
-                                foreach ($listas $list) { ?>
+                                foreach ($list as $list) { ?>
                                 <tr>
                                     <td><?php echo $list['id_depenses'] ?></td>
                                     <td><?php echo $list['id_categorie'] ?></td>
                                     <td><?php echo $list['montant_depenses'] ?></td>
-                                    <td><?php echo $list['id_beneficiaire'] ?></td>
+                                    <td><?php echo $list['id_benef'] ?></td>
                                 </tr>
                                 <?php }} ?>
 
