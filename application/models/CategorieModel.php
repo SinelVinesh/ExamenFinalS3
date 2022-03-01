@@ -8,7 +8,11 @@ class CategorieModel extends CI_Model
         $this->db->query("Insert into categorie(type_categorie) values('" . $type_categorie . "')");
         $query = $this->db->query("select id_categorie from categorie order by id_categorie desc limit  1");
         $tmp = $query->row_array();
-        $this->db->query("Insert into budget(date_budget, montant_budget, id_categorie) values(now(),$Budget,'" . $tmp['id_categorie'] . "')");
+        $query1 = $this->query("select sum((select sum(depenses.montant_depenses) as somme from depenses where depenses.id_categorie = '" . $tmp['id_categorie'] . "' group by depenses.id_categorie)-budget.montant_budget) as reste from budget where budget.id_categorie = '" . $tmp['id_categorie'] . "';
+");
+        $reste = $query1->row_array();
+        $total = $reste + $Budget;
+        $this->db->query("Insert into budget(date_budget, montant_budget, id_categorie) values(now(),$total,'" . $tmp['id_categorie'] . "')");
     }
 
     public function getById($id)

@@ -7,7 +7,7 @@ class DepensesModel extends CI_Model
       return $query->result_array();
     }
     public function insert($date_depense,$id_benef,$montant_depenses,$id_categorie){
-        $this->db->query("Insert into depenses(date_depenses, id_benef, montant_depenses, id_categorie) values('".$date_depense."','".$id_benef."',.$montant_depenses.,'".$id_categorie."') ");
+        $this->db->query("Insert into depenses(date_depenses, id_benef, montant_depenses, id_categorie) values('".$date_depense."','".$id_benef."',".$montant_depenses.",'".$id_categorie."') ");
     }
     public function chartData(){
         $query =  $this->db->query("select sum(depenses.montant_depenses) as total,
@@ -24,7 +24,13 @@ group by extract(YEAR from depenses.date_depenses),extract(Month from depenses.d
         $query =  $this->db->query("Select id_depenses,date_depenses,id_categorie,montant_depenses from depenses where (extract(month from date_depenses) = ".$mois." and  extract(YEAR from date_depenses) = ".$annee." and id_benef LIKE '".$benef."')");
         return $query->result_array();
     }
-
-
+    public function getBudget($id_categorie){
+        $query =  $this->db->query("select montant_budget from budget where id_categorie = '".$id_categorie."' order by id_budget desc limit 1");
+        return $query->row_array();
+    }
+    public function getList(){
+        $query =  $this->db->query("Select * from depenses");
+        return $query->result_array();
+    }
 }
 ?>

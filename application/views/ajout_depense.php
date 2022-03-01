@@ -44,21 +44,13 @@ $depenses =[['id'=>'DEP0001','date'=>'2021-10-21','categorie'=>'Alimentation','m
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <form action="depense/insert"><label class="form-label">Date de la depense :</label><input class="form-control" type="date" name="date">
+                            <form action="<?php echo site_url('depense/insert')?>" method = "post"><label class="form-label">Date de la depense :</label><input class="form-control" type="date" name="date_depenses">
                                 <label class="form-label">Montant de la depense :</label>
-                                <input class="form-control" type="number" name="montant">
+                                <input class="form-control" type="number" name="montant_depenses">
                                 <label class="form-label">Categorie de la depense :&nbsp;</label>
-                                <select name="categorie" class="form-select">
-                                    <?php foreach ($listecat as $cat) { ?>
-                                        <option value="<?php echo $cat['id'] ?>" selected=""><?php echo $cat['designation'] ?></option>
-                                    <?php } ?>
-                                </select>
+                                <input class="form-control" type="text" name="id_categorie">
                                 <label class="form-label">Beneficiaire de la depense :</label>
-                                <select name="beneficiaire" class="form-select">
-                                    <?php foreach ($listebenef as $benef) { ?>
-                                        <option value="<?php echo $benef['id'] ?>" selected=""><?php echo $benef['designation'] ?></option>
-                                    <?php } ?>
-                                </select>
+                                <input class="form-control" type="text" name="id_benef">
                                 <button class="btn btn-primary" type="submit">Ajouter</button></form>
                         </div>
                     </div>
@@ -82,13 +74,13 @@ $depenses =[['id'=>'DEP0001','date'=>'2021-10-21','categorie'=>'Alimentation','m
                                 </thead>
                                 <tbody>
                                 <?php
-                                if($depenses != null) {
-                                foreach ($depenses as $depense) { ?>
+                                if($list != null) {
+                                foreach ($listas $list) { ?>
                                 <tr>
-                                    <td><?php echo $depense['id'] ?></td>
-                                    <td><?php echo $depense['categorie'] ?></td>
-                                    <td><?php echo $depense['montant'] ?></td>
-                                    <td><?php echo $depense['beneficiaire'] ?></td>
+                                    <td><?php echo $list['id_depenses'] ?></td>
+                                    <td><?php echo $list['id_categorie'] ?></td>
+                                    <td><?php echo $list['montant_depenses'] ?></td>
+                                    <td><?php echo $list['id_beneficiaire'] ?></td>
                                 </tr>
                                 <?php }} ?>
 

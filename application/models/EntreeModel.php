@@ -9,7 +9,12 @@ class EntreeModel extends CI_Model
 
     }
     public function insert($date_in_imprevu,$montant_in_imprevu){
-        $this->db->query("Insert into entree_imprevu(date_in_imprevu, montant_in_imprevu) values('".$date_in_imprevu."',.$montant_in_imprevu.)");
+        $this->db->query("Insert into entree_imprevu(date_in_imprevu, montant_in_imprevu) values ('".$date_in_imprevu."', ".$montant_in_imprevu.")");
+    }
+    public function getList(){
+        $query =  $this->db->query("Select * from entree_imprevu");
+        return $query->result_array();
+
     }
 }
 ?>

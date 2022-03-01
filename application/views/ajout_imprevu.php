@@ -63,10 +63,10 @@ $entrees = [['id'=>'ENT0001','date'=>'2021-01-12','montant'=>24000],
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <form action="entree/insert"><label class="form-label">Date de l'entree :</label><input class="form-control"
-                                                                                             type="date" name="date"><label
+                            <form action="<?php echo site_url('entree/insert')?>" method="post"><label class="form-label">Date de l'entree :</label><input class="form-control"
+                                                                                             type="date" name="date" value="date"><label
                                         class="form-label">Montant de l'entree:</label><input class="form-control"
-                                                                                              type="number" name="montant">
+                                                                                              type="number" name="montant" value="montant">
                                 <button class="btn btn-primary" type="submit">Ajouter</button>
                             </form>
                         </div>
@@ -89,11 +89,11 @@ $entrees = [['id'=>'ENT0001','date'=>'2021-01-12','montant'=>24000],
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($entrees as $entree) { ?>
+                                <?php foreach ($list as $list) { ?>
                                 <tr>
-                                    <td><?php echo $entree['id'] ?></td>
-                                    <td><?php echo $entree['date'] ?></td>
-                                    <td><?php echo $entree['montant'] ?></td>
+                                    <td><?php echo $list['id_in_imprevu'] ?></td>
+                                    <td><?php echo $list['date_in_imprevu'] ?></td>
+                                    <td><?php echo $list['montant_in_imprevu'] ?></td>
                                 </tr>
                                 <?php } ?>
                                 </tbody>
