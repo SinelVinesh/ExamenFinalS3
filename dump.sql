@@ -260,11 +260,6 @@ BEN0002	Papa
 BEN0003	Maman
 BEN0004	Enfant
 BEN0005	Koto
-BEN0006	Famille
-BEN0007	Papa
-BEN0008	Maman
-BEN0009	Enfant
-BEN0010	Koto
 \.
 
 
@@ -283,16 +278,6 @@ BUD0007	2022-02-28	400000	CAT0002
 BUD0008	2022-02-28	500000	CAT0003
 BUD0009	2022-02-28	100000	CAT0004
 BUD0010	2022-02-28	500000	CAT0005
-BUD0011	2022-01-30	200000	CAT0001
-BUD0012	2022-01-30	400000	CAT0002
-BUD0013	2022-01-30	500000	CAT0003
-BUD0014	2022-01-30	100000	CAT0004
-BUD0015	2022-01-30	500000	CAT0005
-BUD0016	2022-02-28	200000	CAT0001
-BUD0017	2022-02-28	400000	CAT0002
-BUD0018	2022-02-28	500000	CAT0003
-BUD0019	2022-02-28	100000	CAT0004
-BUD0020	2022-02-28	500000	CAT0005
 \.
 
 
@@ -306,11 +291,6 @@ CAT0002	deplacement
 CAT0003	loyer
 CAT0004	divertissement
 CAT0005	education
-CAT0006	nourriture
-CAT0007	deplacement
-CAT0008	loyer
-CAT0009	divertissement
-CAT0010	education
 \.
 
 
@@ -363,18 +343,6 @@ SAL0009	2022-01-30	USR0001	4.5e+06
 SAL0010	2022-01-30	USR0002	100000
 SAL0011	2022-02-28	USR0001	4.5e+06
 SAL0012	2022-02-28	USR0002	100000
-SAL0013	2021-09-30	USR0001	4e+06
-SAL0014	2021-09-30	USR0002	200000
-SAL0015	2021-10-30	USR0001	4e+06
-SAL0016	2021-10-30	USR0002	200000
-SAL0017	2021-11-30	USR0001	4e+06
-SAL0018	2021-11-30	USR0002	200000
-SAL0019	2021-12-30	USR0001	4e+06
-SAL0020	2021-12-30	USR0002	200000
-SAL0021	2022-01-30	USR0001	4.5e+06
-SAL0022	2022-01-30	USR0002	100000
-SAL0023	2022-02-28	USR0001	4.5e+06
-SAL0024	2022-02-28	USR0002	100000
 \.
 
 
@@ -389,24 +357,6 @@ USR0003	Enfant1	Enfant1	Enfant1	f
 USR0004	Enfant2	Enfant2	Enfant2	f
 USR0005	Enfant3	Enfant3	Enfant3	f
 USR0006	Tonton	Tonton	Tonton	f
-USR0007	Papa	Papa	Papa	t
-USR0008	Maman	Maman	Maman	f
-USR0009	Enfant1	Enfant1	Enfant1	f
-USR0010	Enfant2	Enfant2	Enfant2	f
-USR0011	Enfant3	Enfant3	Enfant3	f
-USR0012	Tonton	Tonton	Tonton	f
-USR0013	Papa	Papa	Papa	t
-USR0014	Maman	Maman	Maman	f
-USR0015	Enfant1	Enfant1	Enfant1	f
-USR0016	Enfant2	Enfant2	Enfant2	f
-USR0017	Enfant3	Enfant3	Enfant3	f
-USR0018	Tonton	Tonton	Tonton	f
-USR0019	Papa	Papa	Papa	t
-USR0020	Maman	Maman	Maman	f
-USR0021	Enfant1	Enfant1	Enfant1	f
-USR0022	Enfant2	Enfant2	Enfant2	f
-USR0023	Enfant3	Enfant3	Enfant3	f
-USR0024	Tonton	Tonton	Tonton	f
 \.
 
 
@@ -421,14 +371,14 @@ SELECT pg_catalog.setval('public.benef_s', 10, true);
 -- Name: budget_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.budget_s', 20, true);
+SELECT pg_catalog.setval('public.budget_s', 21, true);
 
 
 --
 -- Name: categorie_s; Type: SEQUENCE SET; Schema: public; Owner: exams3_user
 --
 
-SELECT pg_catalog.setval('public.categorie_s', 10, true);
+SELECT pg_catalog.setval('public.categorie_s', 14, true);
 
 
 --
