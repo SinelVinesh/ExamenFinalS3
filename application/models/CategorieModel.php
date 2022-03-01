@@ -22,5 +22,15 @@ class CategorieModel extends CI_Model
         $query = $this->db->query("select * from categorie");
         return $query->result_array();
     }
+    public function chartData(){
+      $query =  $this->db->query("select sum(budget.montant_budget) as total,
+       extract(YEAR from budget.date_budget) as Year,
+       extract(Month from budget.date_budget) as Month,
+       budget.id_categorie,
+       c.type_categorie
+from budget join categorie c on budget.id_categorie = c.id_categorie
+group by extract(YEAR from budget.date_budget),extract(Month from budget.date_budget),budget.id_categorie,c.type_categorie;");
+        return $query->result_array();
+    }
 }
 ?>

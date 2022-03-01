@@ -27,5 +27,11 @@ class Categorie extends CI_Controller
             $data['ById'] = $this->CategorieModel->getById($tmp['id_categorie'] );
         }
         }
+        public function chartData(){
+            $this->load->model(CategorieModel);
+            $data = array();
+            $data['chartData'] = $this->CategorieModel->chartData();
+            $this->load->view('graphique_categorie.php',$data);
+        }
     }
 ?>

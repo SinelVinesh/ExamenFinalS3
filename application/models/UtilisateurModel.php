@@ -8,8 +8,8 @@ class UtilisateurModel extends CI_Model
     public function delete($id_utilisateur){
         $this->db->query("Delete from utilisateur where id_utilisateur = '".$id_utilisateur."'");
     }
-    public  function update($id_utilisateur,$nom_colonne,$nouvelle_valeur){
-        $this->db->query("update utilisateur set '".$nom_colonne."' = '".$nouvelle_valeur."' where id_utilisateur = '".$id_utilisateur."'");
+    public  function update($id_utilisateur,$nom,$identifiant,$mdp){
+        $this->db->query("update utilisateur set nom_utilisateur = '".$nom."' ,login_utilisateur ='".$identifiant."' ,password_utilisateur = '".$mdp ."' where id_utilisateur = '".$id_utilisateur."'");
     }
     public function select(){
        $query = $this->db->query("SELECT nom_utilisateur,login_utilisateur,password_utilisateur from utilisateur");
