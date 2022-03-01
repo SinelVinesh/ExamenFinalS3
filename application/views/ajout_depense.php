@@ -3,7 +3,7 @@ $this->load->view('common/header');
 $listecat = [['id'=>'CAT0001','designation'=>'Alimentation'],['id'=>'CAT0002','designation'=>'Plaisir']
     ,['id'=>'CAT0003','designation'=>'Soin']];
 $listebenef =[['id'=>'BEN0001','designation'=>'Jean'],['id'=>'BEN0005','designation'=>'Jeff']];
-$listedepenses =[['id'=>'DEP0001','date'=>'2021-10-21','categorie'=>'Alimentation','montant'=>64520,'beneficiaire'=>'Jean'],
+$depenses =[['id'=>'DEP0001','date'=>'2021-10-21','categorie'=>'Alimentation','montant'=>64520,'beneficiaire'=>'Jean'],
                 ['id'=>'DEP0002','date'=>'2021-14-21','categorie'=>'Plaisir','montant'=>5420,'beneficiaire'=>'Koto'],
                 ['id'=>'DEP0003','date'=>'2022-01-11','categorie'=>'Sante','montant'=>42000,'beneficiaire'=>'Jeanne']]
 ?>
@@ -81,14 +81,16 @@ $listedepenses =[['id'=>'DEP0001','date'=>'2021-10-21','categorie'=>'Alimentatio
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($listedepenses as $depense) { ?>
+                                <?php
+                                if($depenses != null) {
+                                foreach ($depenses as $depense) { ?>
                                 <tr>
                                     <td><?php echo $depense['id'] ?></td>
                                     <td><?php echo $depense['categorie'] ?></td>
                                     <td><?php echo $depense['montant'] ?></td>
                                     <td><?php echo $depense['beneficiaire'] ?></td>
                                 </tr>
-                                <?php } ?>
+                                <?php }} ?>
 
                                 </tbody>
                             </table>

@@ -1,8 +1,5 @@
 <?php
 $this->load->view('common/header');
-$categories = [['id'=>'CAT0001','designation'=>'Alimentation','budget'=>520000],
-                ['id'=>'CAT0002','designation'=>'Sante','budget'=>500000],
-                ['id'=>'CAT0003','designation'=>'Plaisir','budget'=>150000]]
 ?>
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
@@ -65,7 +62,7 @@ $categories = [['id'=>'CAT0001','designation'=>'Alimentation','budget'=>520000],
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form action="categorie/insert"><label class="form-label ">Designation :</label><input class="form-control"
+                                <form action="<?php site_url('categorie/insert') ?>" method="post"><label class="form-label ">Designation :</label><input class="form-control"
                                                                                             type="text" name="categorie_name"><label
                                             class="form-label">Budget mensuel :</label><input class="form-control tiny_field"
                                                                                               type="text" name="budget_mensuel">
@@ -92,13 +89,15 @@ $categories = [['id'=>'CAT0001','designation'=>'Alimentation','budget'=>520000],
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($categories as $category) {?>
+                                    <?php
+                                    if(isset($categories)) {
+                                    foreach ($categories as $category) {?>
                                     <tr>
-                                        <td><?php echo $category['id']?></td>
-                                        <td><?php echo $category['designation']?></td>
-                                        <td><input class="form-control" type="number" value="<?php echo $category['budget']?>" name="<?php echo $category['id']?>"></td>
+                                        <td><?php echo $category['id_categorie']?></td>
+                                        <td><?php echo $category['type_categorie']?></td>
+                                        <td><input class="form-control" type="number" value="<?php echo $category['budget']?>" name="<?php echo $category['id_categorie']?>"></td>
                                     </tr>
-                                    <?php } ?>
+                                    <?php }} ?>
                                     </tbody>
                                 </table>
                             </div>

@@ -3,7 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Categorie extends CI_Controller
 {
     public function insertion() {
-        $this->load->view('categorie_insertion.php');
+        $this->load->model('CategorieModel');
+        $this->load->model('BudgetModel');
+        $datas['categories'] = $this->CategorieModel->getall();
+        foreach ($datas['categories'] as $category) {
+            $category['budget'] = $this->BudgetModel->getLatest(category['id_category']);
+        }
+        $this->load->view('categorie_insertion.php',$datas);
     }
 
     public function insert(){

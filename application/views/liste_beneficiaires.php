@@ -1,7 +1,5 @@
 <?php
 $this->load->view('common/header');
-$designations = [['id'=>'BEN0001','designation'=>'Jean'],['id'=>'BEN0002','designation'=>'Amis'],['id'=>'BEN0003','designation'=>'Famille'],
-    ['id'=>'BEN0004','designation'=>'Parents']];
 ?>
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
@@ -88,19 +86,16 @@ $designations = [['id'=>'BEN0001','designation'=>'Jean'],['id'=>'BEN0002','desig
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach($designations as $designation) { ?>
+                                    <?php foreach($beneficiaires as $beneficiaire) { ?>
                                     <tr>
-                                        <td><?php echo $designation['id']?></td>
-                                        <td><input name="<?php echo $designation['id']?>" class="form-control" type="text" value="<?php echo $designation['designation']?>"></td>
+                                        <td><?php echo $beneficiaire['id_benef']?></td>
+                                        <td><input name="<?php echo $beneficiaire['id_benef']?>" class="form-control" type="text" value="<?php echo $beneficiaire['nom_benef']?>"></td>
                                     </tr>
                                     <?php } ?>
                                     </tbody>
-                                    <tfoot>
-                                    <tr></tr>
-                                    </tfoot>
                                 </table>
                             </div>
-                            <button class="btn btn-primary" type="button">Valider les modifications</button>
+                            <button class="btn btn-primary" type="submit">Valider les modifications</button>
                         </form>
                     </div>
                 </div>

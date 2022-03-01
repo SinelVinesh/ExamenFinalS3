@@ -14,8 +14,17 @@ class Resume extends CI_Controller
         $this->load->view('graphique_categorie',$data);
     }
 
-    public  function beneficiaire($benef=0) {
-        $data['beneficiaire'] = $benef;
+    public  function beneficiaire() {
+        $this->load->model('BeneficiairesModel');
+        $data['beneficiaires'] = $this->BeneficiairesModel->getall();
+
+        if(($benef = $this->input->post('beneficiaire')) != null) {
+            $year = $this->input->post('year');
+            $month = $this->input->post('month');
+            $this->load->model('DepensesModel');
+            $data['depenses'] = $this->DepensesModel->filter_depense_beneficiaire($year,$month,$benef);
+        }
+
         $this->load->view('tableau_beneficiaire',$data);
     }
     public function filtered(){

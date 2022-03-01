@@ -1,11 +1,5 @@
 <?php
 $this->load->view('common/header');
-$beneficiaires = [['nom'=>'Jean','id'=>'BEN0001'],['nom'=>'Amis','id'=>'BEN0002'],
-                    ['nom'=>'Famille','id'=>'BEN0003'],['nom'=>'Rakoto','id'=>'BEN0004']];
-$depenses=[['id'=>'DEP0001','date'=>'2022-01-22','type'=>'Alimentation','montant'=>64000],
-    ['id'=>'DEP0002','date'=>'2021-05-21','type'=>'Alimentation','montant'=>50000],
-    ['id'=>'DEP0003','date'=>'2022-02-15','type'=>'Alimentation','montant'=>23000],
-    ['id'=>'DEP0004','date'=>'2022-03-12','type'=>'Alimentation','montant'=>13000]];
 ?>
 <div class="d-flex flex-column" id="content-wrapper">
     <div id="content">
@@ -58,9 +52,10 @@ $depenses=[['id'=>'DEP0001','date'=>'2022-01-22','type'=>'Alimentation','montant
             <div class="d-sm-flex justify-content-between align-items-center mb-4">
                 <h3 class="text-dark mb-0">Tableau Beneficiaire</h3>
             </div>
-            <form action="<?php base_url('resume/beneficiaire') ?>" method="post"><select class="form-select tiny_field">
+            <form action="<?php base_url('resume/beneficiaire') ?>" method="post"><select class="form-select tiny_field"
+                                                                                          name="beneficiaire">
                     <?php foreach ($beneficiaires as $beneficiaire) {?>
-                    <option value="<?php echo $beneficiaire['id']?>" selected=""><?php echo $beneficiaire['nom']?></option>
+                    <option value="<?= $beneficiaire['id_benef']?>" selected=""><?= $beneficiaire['nom_benef']?></option>
                     <?php }?>
                 </select><input class="form-control tiny_field" type="number" placeholder="Year" min="2000" max="2022" name="year"><input
                         class="form-control tiny_field" type="number" placeholder="Month" min="01" max="12" name="month">
@@ -89,14 +84,16 @@ $depenses=[['id'=>'DEP0001','date'=>'2022-01-22','type'=>'Alimentation','montant
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($depenses as $depense) {?>
+                                        <?php
+                                        if(isset($depenses)) {
+                                        foreach ($depenses as $depense) {?>
                                         <tr>
-                                            <td><?php echo $depense['id']?></td>
-                                            <td><?php echo $depense['date']?></td>
-                                            <td><?php echo $depense['type']?></td>
-                                            <td><?php echo $depense['montant']?></td>
+                                            <td><?php echo $depense['id_depenses']?></td>
+                                            <td><?php echo $depense['date_depenses']?></td>
+                                            <td><?php echo $depense['id_categorie']?></td>
+                                            <td><?php echo $depense['montant_depenses']?></td>
                                         </tr>
-                                        <?php }?>
+                                        <?php }}?>
                                         </tbody>
                                     </table>
                                 </div>
