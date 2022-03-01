@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Salaire extends CI_Controller
 {
     public function index() {
-        $this->load->view('liste_salaries');
+        $this->load->view('gestion_salaire');
     }
 
     public function modif_salaire() {
