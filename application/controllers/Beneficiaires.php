@@ -6,7 +6,7 @@ class Beneficiaires extends CI_Controller
         $this->load->view('liste_beneficiaires');
     }
     public function insert(){
-        $data['nom_benef'] = $this->input->post('nom_benef');
+        $data['designation'] = $this->input->post('designation');
         $this->load->model('BeneficiairesModel');
         $this->BeneficiairesModel->insert($data['nom_benef']);
         $this->load->view('liste_beneficiaires');

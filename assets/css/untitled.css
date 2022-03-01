@@ -17,7 +17,7 @@ div {
   margin-bottom: 20px;
 }
 
-#resume_year,#resume_month {
+.tiny_field {
   width: 20%;
 }
 

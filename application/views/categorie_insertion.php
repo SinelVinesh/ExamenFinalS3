@@ -1,28 +1,55 @@
 <?php
 $this->load->view('common/header');
+$categories = [['id'=>'CAT0001','designation'=>'Alimentation','budget'=>520000],
+                ['id'=>'CAT0002','designation'=>'Sante','budget'=>500000],
+                ['id'=>'CAT0003','designation'=>'Plaisir','budget'=>150000]]
 ?>
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
             <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                <div class="container-fluid">
+                    <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i
+                                class="fas fa-bars"></i></button>
                     <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group"></div>
                     </form>
                     <ul class="navbar-nav flex-nowrap ms-auto">
-                        <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                            <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                        <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
+                                                                            aria-expanded="false"
+                                                                            data-bs-toggle="dropdown" href="#"><i
+                                        class="fas fa-search"></i></a>
+                            <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in"
+                                 aria-labelledby="searchDropdown">
                                 <form class="me-auto navbar-search w-100">
-                                    <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                        <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                    <div class="input-group"><input class="bg-light form-control border-0 small"
+                                                                    type="text" placeholder="Search for ...">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary py-0" type="button"><i
+                                                        class="fas fa-search"></i></button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
                         </li>
                         <div class="d-none d-sm-block topbar-divider"></div>
                         <li class="nav-item dropdown no-arrow">
-                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar1.jpeg"></a>
-                                <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                                                                       aria-expanded="false" data-bs-toggle="dropdown"
+                                                                       href="#"><span
+                                            class="d-none d-lg-inline me-2 text-gray-600 small">Valerie Luna</span><img
+                                            class="border rounded-circle img-profile"
+                                            src="assets/img/avatars/avatar1.jpeg"></a>
+                                <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a
+                                            class="dropdown-item" href="#"><i
+                                                class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a
+                                            class="dropdown-item" href="#"><i
+                                                class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a
+                                            class="dropdown-item" href="#"><i
+                                                class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity
+                                        log</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><i
+                                                class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>
                             </div>
                         </li>
@@ -38,7 +65,12 @@ $this->load->view('common/header');
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <form><label class="form-label">Designation :</label><input class="form-control" type="text"><label class="form-label">Budget mensuel :</label><input class="form-control" type="text"><button class="btn btn-primary" type="button">Ajouter</button></form>
+                                <form action="categorie/insert"><label class="form-label ">Designation :</label><input class="form-control"
+                                                                                            type="text" name="categorie_name"><label
+                                            class="form-label">Budget mensuel :</label><input class="form-control tiny_field"
+                                                                                              type="text" name="budget_mensuel">
+                                    <button class="btn btn-primary" type="submit">Ajouter</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -49,7 +81,8 @@ $this->load->view('common/header');
                     </div>
                     <div class="card-body">
                         <form>
-                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid"
+                                 aria-describedby="dataTable_info">
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                     <tr>
@@ -59,47 +92,17 @@ $this->load->view('common/header');
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ($categories as $category) {?>
                                     <tr>
-                                        <td>USR0001</td>
-                                        <td>Alimentation</td>
-                                        <td><input class="form-control" type="number" value="600000"></td>
-                                        <td></td>
-                                        <td><input type="checkbox"></td>
+                                        <td><?php echo $category['id']?></td>
+                                        <td><?php echo $category['designation']?></td>
+                                        <td><input class="form-control" type="number" value="<?php echo $category['budget']?>" name="<?php echo $category['id']?>"></td>
                                     </tr>
-                                    <tr>
-                                        <td>USR0001</td>
-                                        <td>Alimentation</td>
-                                        <td><input class="form-control" type="number" value="600000"></td>
-                                        <td></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>USR0001</td>
-                                        <td>Alimentation</td>
-                                        <td><input class="form-control" type="number" value="600000"></td>
-                                        <td></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>USR0001</td>
-                                        <td>Alimentation</td>
-                                        <td><input class="form-control" type="number" value="600000"></td>
-                                        <td></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>USR0001</td>
-                                        <td>Alimentation</td>
-                                        <td><input class="form-control" type="number" value="600000"></td>
-                                        <td></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
+                                    <?php } ?>
                                     </tbody>
-                                    <tfoot>
-                                    <tr></tr>
-                                    </tfoot>
                                 </table>
-                            </div><button class="btn btn-primary" type="button">Valider les modifications</button><button class="btn btn-danger" type="button" style="margin-left: 10px;">Supprimer la selection</button>
+                            </div>
+                            <button class="btn btn-primary" type="button">Valider les modifications</button>
                         </form>
                     </div>
                 </div>

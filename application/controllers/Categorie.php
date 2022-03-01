@@ -8,7 +8,7 @@ class Categorie extends CI_Controller
 
     public function insert(){
         $data['categorie_name'] = $this->input->post('categorie_name');
-        $data['Budget'] = $this->input->post('budget_mensuel');
+        $data['budget'] = $this->input->post('budget_mensuel');
         $this->load->Model('CategorieModel');
         $this->CategorieModel->insert($data['categorie_name'],$data['Budget']);
         $this->load->view('index.php');

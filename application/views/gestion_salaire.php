@@ -1,5 +1,9 @@
 <?php
 $this->load->view('common/header.php');
+$liste_utilisateur=[['id'=>'USR0004','nom'=>'Koto'],['id'=>'USR0005','nom'=>'Rova'],['id'=>'USR0006','nom'=>'Jona']];
+$salaires = [['id'=>'SAL0001','id_utilisateur'=>'USR0001','montant'=>610000],
+            ['id'=>'SAL0002','id_utilisateur'=>'USR0002','montant'=>170000],
+            ['id'=>'SAL0003','id_utilisateur'=>'USR0003','montant'=>190000]];
 ?>
 <div class="d-flex flex-column" id="content-wrapper">
     <div id="content">
@@ -38,11 +42,11 @@ $this->load->view('common/header.php');
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <form><label class="form-label">Utilisateur :</label><select class="form-select">
+                            <form action="salaire/filtered" method="post"><label class="form-label">Utilisateur :</label><select class="form-select">
                                     <optgroup label="This is a group">
-                                        <option value="12" selected="">This is item 1</option>
-                                        <option value="13">This is item 2</option>
-                                        <option value="14">This is item 3</option>
+                                        <?php foreach ($liste_utilisateur as $utilisateur) { ?>
+                                        <option value="<?php echo $utilisateur['id']?>" selected=""><?php echo $utilisateur['nom']?></option>
+                                        <?php }?>
                                     </optgroup>
                                 </select><label class="form-label">Montant :</label><input class="form-control" type="text"><button class="btn btn-primary" type="button">Ajouter</button></form>
                         </div>
@@ -54,7 +58,7 @@ $this->load->view('common/header.php');
                     <p class="text-primary m-0 fw-bold">Liste des salaries</p>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="salaire/update" method="post">
                         <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
                             <table class="table my-0" id="dataTable">
                                 <thead>
@@ -65,36 +69,16 @@ $this->load->view('common/header.php');
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php foreach ($salaires as $salaire) {?>
                                 <tr>
-                                    <td>USR0001</td>
-                                    <td>Rakoto</td>
-                                    <td><input class="form-control" type="number"></td>
-                                    <td><input type="checkbox"></td>
+                                    <td><?php echo $salaire['id']?></td>
+                                    <td><?php echo $salaire['id_utilisateur'] ?></td>
+                                    <td><input class="form-control" type="number" value="<?php echo $salaire['montant'] ?>" name="<?php echo $salaire['id']?>"></td>
                                 </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Rakoto</td>
-                                    <td><input class="form-control" type="number"></td>
-                                    <td><input type="checkbox"></td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Rakoto</td>
-                                    <td><input class="form-control" type="number"></td>
-                                    <td><input type="checkbox"></td>
-                                </tr>
-                                <tr>
-                                    <td>USR0001</td>
-                                    <td>Rakoto</td>
-                                    <td><input class="form-control" type="number"></td>
-                                    <td><input type="checkbox"></td>
-                                </tr>
+                                <?php } ?>
                                 </tbody>
-                                <tfoot>
-                                <tr></tr>
-                                </tfoot>
                             </table>
-                        </div><button class="btn btn-primary" type="button">Valider les modifications</button><button class="btn btn-danger" type="button" style="margin-left: 10px;">Supprimer la selection</button>
+                        </div><button class="btn btn-primary" type="button">Valider les modifications</button>
                     </form>
                 </div>
             </div>

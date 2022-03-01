@@ -33,8 +33,8 @@ $this->load->view('common/header.php');
                 <h3 class="text-dark mb-0">Tableaux mensuels des depenses et des entrees</h3>
             </div>
             <form action="<?php echo base_url('resume/filtered') ?>" method="post">
-                <input id="resume_year" class="form-control" type="number" placeholder="Annee" min="2000" max="2022" name="year"><input
-                        id="resume_month" class="form-control" type="number" placeholder="Mois" min="01" max="12" name="month">
+                <input class="form-control tiny_field" type="number" placeholder="Annee" min="2000" max="2022" name="year"><input
+                        class="form-control tiny_field" type="number" placeholder="Mois" min="01" max="12" name="month">
                 <button class="btn btn-primary" type="submit">Valider</button>
             </form>
             <div class="row">
