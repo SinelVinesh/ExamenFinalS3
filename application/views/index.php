@@ -35,7 +35,7 @@ $this->load->view('common/header.php');
             <form action="<?php echo base_url('resume/filtered') ?>" method="post">
                 <input id="resume_year" class="form-control" type="number" placeholder="Annee" min="2000" max="2022" name="year"><input
                         id="resume_month" class="form-control" type="number" placeholder="Mois" min="01" max="12" name="month">
-                <button class="btn btn-primary" type="button">Valider</button>
+                <button class="btn btn-primary" type="submit">Valider</button>
             </form>
             <div class="row">
                 <div class="col-6">
@@ -64,12 +64,12 @@ $this->load->view('common/header.php');
                                         <tbody>
                                         <?php foreach ($depenses as $depense) {?>
                                         <tr>
-                                            <td><?php $depense['id']?></td>
-                                            <td><?php $depense['date']?></td>
-                                            <td><?php $depense['type']?></td>
-                                            <td><?php $depense['montant']?></td>
-                                            <td><?php $depense['benef']?></td>
-                                            <td><?php $depense['percent']?></td>
+                                            <td><?php echo $depense['id_depenses']?></td>
+                                            <td><?php echo $depense['date_depenses']?></td>
+                                            <td><?php echo $depense['id_categorie']?></td>
+                                            <td><?php echo $depense['montant_depenses']?></td>
+                                            <td><?php echo $depense['id_benef']?></td>
+                                            <td><?php echo $depense['pourcentage']?></td>
                                         </tr>
                                         <?php }?>
                                         </tbody>
@@ -97,16 +97,14 @@ $this->load->view('common/header.php');
                                             <th>ID</th>
                                             <th>Date de l'entree</th>
                                             <th>Montant (MGA)</th>
-                                            <th>% du budget</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php foreach ($entrees as $entree) {?>
                                         <tr>
-                                            <td><?php $entree['id'] ?></td>
-                                            <td><?php $entree['date'] ?></td>
-                                            <td><?php $entree['montant'] ?></td>
-                                            <td><?php $entree['percent'] ?></td>
+                                            <td><?php echo $entree['id'] ?></td>
+                                            <td><?php echo $entree['date'] ?></td>
+                                            <td><?php echo $entree['montant'] ?></td>
                                         </tr>
                                         <?php } ?>
                                         </tbody>

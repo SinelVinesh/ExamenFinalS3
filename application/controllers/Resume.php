@@ -3,7 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Resume extends CI_Controller
 {
     public function index() {
-        $this->load->view('index');
+        $tmp['month'] = date('m');
+        $tmp['year'] = date('Y');
+        $data = $this->getDepensesEntrees($tmp);
+        $this->load->view('index',$data);
     }
 
     public  function categorie($cat=0) {
@@ -22,9 +25,19 @@ class Resume extends CI_Controller
         if($this->input->post('month') !== null){
             $tmp['month'] = $this->input->post('month');
             $tmp['year'] = $this->input->post('year');
-            $data['Depenses'] = $this->DepensesModel->select( $tmp['year'] ,$tmp['month']);
-            $data['Entree'] = $this->EntreeModel->select( $tmp['year'] ,$tmp['month']);
+            $data = $this->getDepensesEntrees($tmp);
         }
         $this->load->view('index',$data);
+    }
+
+    private function getDepensesEntrees(array $tmp)
+    {
+        $this->load->model('DepensesModel');
+        $this->load->model('EntreeModel');
+        $data['depenses'] = $this->DepensesModel->select($tmp['year'], $tmp['month']);
+        $data['entrees'] = $this->EntreeModel->select($tmp['year'], $tmp['month']);
+        $data['periode']['year'] = $tmp['year'];
+        $data['periode']['month'] = $tmp['month'];
+        return $data;
     }
 }
