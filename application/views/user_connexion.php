@@ -1,25 +1,37 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$data['login'] = true;
+$this->load->view('common/header.php',$data);
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Page de connexion</title>
-</head>
-<body>
-<h1>Connexion</h1>
-<form action="<?php echo site_url('Connexion/connect_as_simple_user')?>" method="post">
-    <label for="username">Nom d'utilisateur : </label>
-    <input type="text" name="username" id="username">
-    <br>
-    <label for="password">Mot de passe : </label>
-    <input type="password" name="password" id="password">
-    <br>
-    <button type="submit">Se connecter</button>
-</form>
-</body>
-</html>
+    <body class="bg-gradient-primary">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-12 col-xl-10">
+            <div class="card shadow-lg o-hidden border-0 my-5">
+                <div class="card-body p-0">
+                    <div class="row" style="min-height: 60vh;">
+                        <div class="col-lg-6 d-none d-lg-flex">
+                            <div class="flex-grow-1 bg-login-image" style="background-image: url(<?php echo base_url('assets/img/dogs/image3.jpeg')?>);"></div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h4 class="text-dark mb-4">Bienvenue !</h4>
+                                </div>
+                                <form class="user" action="<?php echo site_url('Connexion/connect_as_simple_user')?>" method="post">
+                                    <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Identifiant" name="email"></div>
+                                    <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Mot de passe" name="password"></div>
+                                    <div class="mb-3">
+                                        <div class="custom-control custom-checkbox small"></div>
+                                    </div><button class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
+                                    <hr>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $this->load->view('common/footer.php');?>
