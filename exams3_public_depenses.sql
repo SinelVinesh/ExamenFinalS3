@@ -1,0 +1,14 @@
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0001', '2022-01-01', 'BEN0001', 50000, 'CAT0001');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0002', '2022-01-15', 'BEN0001', 150000, 'CAT0001');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0003', '2022-01-26', 'BEN0002', 100000, 'CAT0002');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0004', '2022-01-29', 'BEN0002', 100000, 'CAT0002');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0005', '2022-01-01', 'BEN0001', 500000, 'CAT0003');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0006', '2022-01-11', 'BEN0005', 50000, 'CAT0004');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0007', '2022-01-01', 'BEN0004', 500000, 'CAT0005');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0008', '2022-02-01', 'BEN0001', 50000, 'CAT0001');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0009', '2022-02-15', 'BEN0001', 150000, 'CAT0001');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0010', '2022-02-26', 'BEN0002', 100000, 'CAT0002');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0011', '2022-02-28', 'BEN0002', 100000, 'CAT0002');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0012', '2022-02-01', 'BEN0001', 500000, 'CAT0003');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0013', '2022-02-11', 'BEN0005', 50000, 'CAT0004');
+INSERT INTO public.depenses (id_depenses, date_depenses, id_benef, montant_depenses, id_categorie) VALUES ('DEP0014', '2022-02-01', 'BEN0004', 500000, 'CAT0005');

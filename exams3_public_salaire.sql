@@ -1,0 +1,12 @@
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0001', '2021-09-30', 'USR0001', 4000000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0002', '2021-09-30', 'USR0002', 200000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0003', '2021-10-30', 'USR0001', 4000000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0004', '2021-10-30', 'USR0002', 200000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0005', '2021-11-30', 'USR0001', 4000000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0006', '2021-11-30', 'USR0002', 200000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0007', '2021-12-30', 'USR0001', 4000000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0008', '2021-12-30', 'USR0002', 200000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0009', '2022-01-30', 'USR0001', 4500000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0010', '2022-01-30', 'USR0002', 100000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0011', '2022-02-28', 'USR0001', 4500000);
+INSERT INTO public.salaire (id_salaire, date_salaire, id_utilisateur, montant_salaire) VALUES ('SAL0012', '2022-02-28', 'USR0002', 100000);
